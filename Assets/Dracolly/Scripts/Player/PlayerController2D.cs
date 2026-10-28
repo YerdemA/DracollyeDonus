@@ -1,9 +1,7 @@
 using UnityEngine;
-#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
-#endif
 
-namespace Dracolly
+namespace Dracolly.Player
 {
     /// <summary>
     /// Basit platformer hareketi: sağ-sol yürüme ve zıplama.
@@ -69,7 +67,6 @@ namespace Dracolly
             bool jumpPressed = false;
             bool touchHandled = false;
 
-#if ENABLE_INPUT_SYSTEM
             var kb = Keyboard.current;
             if (kb != null)
             {
@@ -90,20 +87,6 @@ namespace Dracolly
                 }
                 touchHandled = down > 0;
             }
-#else
-            x = Input.GetAxisRaw("Horizontal");
-            if (Input.GetButtonDown("Jump")) jumpPressed = true;
-            if (simpleTouchControls && Input.touchCount > 0)
-            {
-                for (int i = 0; i < Input.touchCount; i++)
-                {
-                    var t = Input.GetTouch(i);
-                    x += t.position.x < Screen.width * 0.5f ? -1f : 1f;
-                }
-                if (Input.touchCount >= 2 && Input.GetTouch(1).phase == TouchPhase.Began) jumpPressed = true;
-                touchHandled = true;
-            }
-#endif
             if (touchHandled) x = Mathf.Clamp(x, -1f, 1f);
             if (hasExternalInput && Mathf.Abs(externalX) > 0.01f) x = externalX;
             inputX = Mathf.Clamp(x, -1f, 1f);
@@ -120,7 +103,7 @@ namespace Dracolly
             if (grounded) lastGroundedTime = Time.time;
             if (walk != null) walk.grounded = grounded;
 
-            Vector2 v = GetVelocity();
+            Vector2 v = rb.linearVelocity;
             v.x = Mathf.MoveTowards(v.x, inputX * moveSpeed, acceleration * Time.fixedDeltaTime);
 
             bool canJump = Time.time - lastGroundedTime <= coyoteTime;
@@ -131,25 +114,7 @@ namespace Dracolly
                 lastJumpPressTime = -10f;
                 lastGroundedTime = -10f;
             }
-            SetVelocity(v);
-        }
-
-        Vector2 GetVelocity()
-        {
-#if UNITY_6000_0_OR_NEWER
-            return rb.linearVelocity;
-#else
-            return rb.velocity;
-#endif
-        }
-
-        void SetVelocity(Vector2 v)
-        {
-#if UNITY_6000_0_OR_NEWER
             rb.linearVelocity = v;
-#else
-            rb.velocity = v;
-#endif
         }
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Dracolly
+namespace Dracolly.Player
 {
     /// <summary>
     /// Kesme (cut-out) karakter için prosedürel yürüme / bekleme / zıplama pozu.
@@ -43,15 +43,7 @@ namespace Dracolly
             if (body == null) body = GetComponentInParent<Rigidbody2D>();
         }
 
-        Vector2 Velocity()
-        {
-            if (body == null) return Vector2.zero;
-#if UNITY_6000_0_OR_NEWER
-            return body.linearVelocity;
-#else
-            return body.velocity;
-#endif
-        }
+        Vector2 Velocity() => body != null ? body.linearVelocity : Vector2.zero;
 
         void LateUpdate()
         {

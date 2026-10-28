@@ -4,6 +4,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
+using Dracolly.Player;
 
 namespace Dracolly.EditorTools
 {
@@ -142,7 +143,7 @@ namespace Dracolly.EditorTools
                 t.localPosition = new Vector3(rel.x, rel.y, 0f);
             }
 
-            var walk = visual.gameObject.AddComponent<Dracolly.CutoutWalk>();
+            var walk = visual.gameObject.AddComponent<CutoutWalk>();
             walk.body = rb;
             walk.hip = hip;
             walk.torso = Get(bones, "torso");
@@ -158,7 +159,7 @@ namespace Dracolly.EditorTools
             walk.thighBack = Get(bones, "thigh_back");
             walk.shinBack = Get(bones, "shin_back");
 
-            var pc = root.AddComponent<Dracolly.PlayerController2D>();
+            var pc = root.AddComponent<PlayerController2D>();
             pc.visual = visual;
             pc.walk = walk;
             return root;

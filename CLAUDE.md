@@ -71,10 +71,10 @@ Bu dosya Claude Code'un bu projede nasıl çalışacağını tanımlar. Oyunun n
 
 ## Komutlar
 
-Unity editörü dışında derleme veya test çalıştırmak istenirse Unity batch mode kullanılır. Unity kurulum yolu Erdem'in bilgisayarına göre değişir; ilk seferde sor ve buraya ekle:
+Unity editörü dışında derleme veya test çalıştırmak istenirse Unity batch mode kullanılır. Erdem'in bilgisayarındaki Unity yolu: `C:\Program Files\Unity\Hub\Editor\6000.3.27f1\Editor\Unity.exe`
 
 ```
-"<Unity.exe yolu>" -batchmode -projectPath . -runTests -testPlatform EditMode -testResults ./TestResults.xml -logFile -
+"C:\Program Files\Unity\Hub\Editor\6000.3.27f1\Editor\Unity.exe" -batchmode -projectPath . -runTests -testPlatform EditMode -testResults ./TestResults.xml -logFile -
 ```
 
 Not: Unity editörü açıkken aynı proje batch mode'da açılamaz.

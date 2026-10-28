@@ -91,7 +91,7 @@ DracollyeDonus/
 │  │  ├─ Settings/                 ScriptableObject ayarları (hız, zıplama, ödüller)
 │  │  ├─ Scripts/
 │  │  │  ├─ Core/                  saf C# mantığı (Unity'ye bağımsız, test edilebilir)
-│  │  │  ├─ Player/
+│  │  │  ├─ Player/                hareket, kesme animasyon, yerel oyuncuyu izleyen kamera
 │  │  │  ├─ Level/
 │  │  │  ├─ Networking/
 │  │  │  ├─ Services/
@@ -110,7 +110,11 @@ DracollyeDonus/
 
 `Library/`, `Temp/`, `Logs/`, `UserSettings/` ve `Builds/` Unity'nin ürettiği klasörlerdir, depoya girmez.
 
-**Namespace kuralı:** `Dracolly.Core`, `Dracolly.Player`, `Dracolly.Level`, `Dracolly.Networking`, `Dracolly.Services`, `Dracolly.UI`, `Dracolly.EditorTools`. Mevcut prototip scriptleri şimdilik `Dracolly` namespace'inde; klasörlerine taşınırken düzeltilecek.
+**Namespace kuralı:** `Dracolly.Core`, `Dracolly.Player`, `Dracolly.Level`, `Dracolly.Networking`, `Dracolly.Services`, `Dracolly.UI`, `Dracolly.EditorTools`.
+
+Kamera takibi (`CameraFollow2D`) `Player/` altındadır: online oyunda her cihaz kendi yerel karakterini izler, takip hedefi yerel oyuncu spawn olduğunda atanır.
+
+Boş klasör önceden açılmaz; bir klasör içine ilk dosya girdiğinde oluşturulur (Git boş klasörü saklamaz, Unity ise klasörün `.meta` dosyasını üretir).
 
 ---
 
