@@ -1,0 +1,126 @@
+{
+  "ppu": 460,
+  "hipHeight": 0.84891,
+  "parts": [
+    {
+      "name": "upper_arm_back",
+      "file": "frawk_upper_arm_back.png",
+      "parent": "torso",
+      "pivotX": 0.4873,
+      "pivotY": 0.8739,
+      "posX": -0.05109,
+      "posY": 0.56087,
+      "order": 0
+    },
+    {
+      "name": "forearm_back",
+      "file": "frawk_forearm_back.png",
+      "parent": "upper_arm_back",
+      "pivotX": 0.3407,
+      "pivotY": 0.9259,
+      "posX": -0.05109,
+      "posY": 0.24565,
+      "order": 1
+    },
+    {
+      "name": "hand_back",
+      "file": "frawk_hand_back.png",
+      "parent": "forearm_back",
+      "pivotX": 0.3813,
+      "pivotY": 0.9235,
+      "posX": 0.02717,
+      "posY": 0.01087,
+      "order": 2
+    },
+    {
+      "name": "shin_back",
+      "file": "frawk_shin_back.png",
+      "parent": "thigh_back",
+      "pivotX": 0.3582,
+      "pivotY": 0.9168,
+      "posX": -0.04402,
+      "posY": -0.3913,
+      "order": 3
+    },
+    {
+      "name": "thigh_back",
+      "file": "frawk_thigh_back.png",
+      "parent": "Hip",
+      "pivotX": 0.4391,
+      "pivotY": 0.9499,
+      "posX": -0.00761,
+      "posY": 0.00217,
+      "order": 4
+    },
+    {
+      "name": "head",
+      "file": "frawk_head.png",
+      "parent": "torso",
+      "pivotX": 0.5438,
+      "pivotY": 0.0449,
+      "posX": 0.03261,
+      "posY": 0.66413,
+      "order": 5
+    },
+    {
+      "name": "shin",
+      "file": "frawk_shin.png",
+      "parent": "thigh",
+      "pivotX": 0.3582,
+      "pivotY": 0.9168,
+      "posX": -0.03641,
+      "posY": -0.39348,
+      "order": 6
+    },
+    {
+      "name": "thigh",
+      "file": "frawk_thigh.png",
+      "parent": "Hip",
+      "pivotX": 0.4391,
+      "pivotY": 0.9499,
+      "posX": 0.0,
+      "posY": -0.0,
+      "order": 7
+    },
+    {
+      "name": "torso",
+      "file": "frawk_torso.png",
+      "parent": "Hip",
+      "pivotX": 0.4453,
+      "pivotY": 0.0704,
+      "posX": 0.0,
+      "posY": -0.0,
+      "order": 8
+    },
+    {
+      "name": "upper_arm",
+      "file": "frawk_upper_arm.png",
+      "parent": "torso",
+      "pivotX": 0.4873,
+      "pivotY": 0.8739,
+      "posX": -0.04348,
+      "posY": 0.5587,
+      "order": 9
+    },
+    {
+      "name": "forearm",
+      "file": "frawk_forearm.png",
+      "parent": "upper_arm",
+      "pivotX": 0.3407,
+      "pivotY": 0.9259,
+      "posX": -0.04348,
+      "posY": 0.24348,
+      "order": 10
+    },
+    {
+      "name": "hand",
+      "file": "frawk_hand.png",
+      "parent": "forearm",
+      "pivotX": 0.3813,
+      "pivotY": 0.9235,
+      "posX": 0.03478,
+      "posY": 0.0087,
+      "order": 11
+    }
+  ]
+}
